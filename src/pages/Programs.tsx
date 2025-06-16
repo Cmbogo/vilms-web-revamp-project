@@ -3,7 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Certificate, Clock, Computer, Award, Briefcase } from "lucide-react";
+import { GraduationCap, Award, Clock, Computer, Briefcase } from "lucide-react";
 
 const Programs = () => {
   const diplomaPrograms = [
@@ -107,7 +107,7 @@ const Programs = () => {
           <Card className="mb-12 border-blue-200">
             <CardHeader className="bg-pink-50">
               <div className="flex items-center">
-                <Certificate className="w-8 h-8 text-blue-600 mr-3" />
+                <Award className="w-8 h-8 text-blue-600 mr-3" />
                 <div>
                   <CardTitle className="text-2xl text-blue-700">Certificate Programs</CardTitle>
                   <CardDescription className="text-blue-600">1-year focused programs with KNEC certification</CardDescription>
