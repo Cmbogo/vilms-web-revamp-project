@@ -1,9 +1,10 @@
 
 import { Mail, Map, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer id="contact" className="bg-blue-700 text-white py-12">
+    <footer className="bg-blue-700 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -20,9 +21,9 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-blue-100">
-              <li><a href="#about" className="hover:text-pink-300 transition-colors">About Us</a></li>
-              <li><a href="#programs" className="hover:text-pink-300 transition-colors">Programs</a></li>
-              <li><a href="#admissions" className="hover:text-pink-300 transition-colors">Admissions</a></li>
+              <li><Link to="/about" className="hover:text-pink-300 transition-colors">About Us</Link></li>
+              <li><Link to="/programs" className="hover:text-pink-300 transition-colors">Programs</Link></li>
+              <li><Link to="/admissions" className="hover:text-pink-300 transition-colors">Admissions</Link></li>
               <li><a href="#" className="hover:text-pink-300 transition-colors">E-Learning Portal</a></li>
               <li><a href="#" className="hover:text-pink-300 transition-colors">Student Portal</a></li>
             </ul>
@@ -31,11 +32,11 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Programs</h4>
             <ul className="space-y-2 text-blue-100">
-              <li><a href="#" className="hover:text-pink-300 transition-colors">Counseling Psychology</a></li>
-              <li><a href="#" className="hover:text-pink-300 transition-colors">Business Management</a></li>
-              <li><a href="#" className="hover:text-pink-300 transition-colors">ICT Programs</a></li>
-              <li><a href="#" className="hover:text-pink-300 transition-colors">Leadership Development</a></li>
-              <li><a href="#" className="hover:text-pink-300 transition-colors">Short Courses</a></li>
+              <li><Link to="/programs" className="hover:text-pink-300 transition-colors">Counseling Psychology</Link></li>
+              <li><Link to="/programs" className="hover:text-pink-300 transition-colors">Business Management</Link></li>
+              <li><Link to="/programs" className="hover:text-pink-300 transition-colors">ICT Programs</Link></li>
+              <li><Link to="/programs" className="hover:text-pink-300 transition-colors">Leadership Development</Link></li>
+              <li><Link to="/programs" className="hover:text-pink-300 transition-colors">Short Courses</Link></li>
             </ul>
           </div>
           

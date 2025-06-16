@@ -1,7 +1,7 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const FeaturedPrograms = () => {
   const programs = [
@@ -56,7 +56,7 @@ export const FeaturedPrograms = () => {
   ];
 
   return (
-    <section id="programs" className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">
@@ -110,18 +110,22 @@ export const FeaturedPrograms = () => {
                   </ul>
                 </div>
                 
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  Learn More
-                </Button>
+                <Link to="/programs">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                    Learn More
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
         </div>
         
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3">
-            View All Programs
-          </Button>
+          <Link to="/programs">
+            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3">
+              View All Programs
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

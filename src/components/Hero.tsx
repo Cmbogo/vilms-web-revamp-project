@@ -1,10 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative bg-gradient-to-br from-blue-50 to-white text-blue-600 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-blue-50 to-white text-blue-600 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
@@ -15,12 +16,16 @@ export const Hero = () => {
               Empowering Leaders. Transforming Communities. Excellence in Professional Education.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-pink-400 hover:bg-pink-500 text-white px-8 py-3 text-lg">
-                Explore Programs
-              </Button>
-              <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 text-lg">
-                Learn More
-              </Button>
+              <Link to="/programs">
+                <Button size="lg" className="bg-pink-400 hover:bg-pink-500 text-white px-8 py-3 text-lg">
+                  Explore Programs
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 text-lg">
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </div>
           
