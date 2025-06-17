@@ -6,29 +6,29 @@ import { GraduationCap, Award, Clock, Computer, Briefcase } from "lucide-react";
 
 const Programs = () => {
   const diplomaPrograms = [
-    { title: "Family and Marriage Counseling", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 17,500/=" },
-    { title: "Psychology Therapy Counseling", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 17,500/=" },
-    { title: "Guidance and Counseling", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 17,500/=" },
-    { title: "Disaster Management and Trauma", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 17,500/=" },
-    { title: "Teacher–Children Ministry", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 17,500/=" },
-    { title: "Business Management", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 30,000/=" },
-    { title: "ICT for Counseling Technology", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 30,000/=" },
-    { title: "Community Development", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 30,000/=" },
-    { title: "Social Work", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 30,000/=" },
-    { title: "Theology and Leadership Counseling", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "D+ & DACAC", cost: "Ksh 27,000/=" },
+    { title: "Family and Marriage Counseling", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Psychology Therapy Counseling", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Guidance and Counseling", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Disaster Management and Trauma", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Teacher–Children Ministry", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Business Management", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 30,000/=" },
+    { title: "ICT for Counseling Technology", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 30,000/=" },
+    { title: "Community Development", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 30,000/=" },
+    { title: "Social Work", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 30,000/=" },
+    { title: "Theology and Leadership Counseling", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 27,000/=" },
   ];
 
   const certificatePrograms = [
-    { title: "Family and Marriage Counseling", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "DACAC", cost: "Ksh 17,500/=" },
-    { title: "Psychology Therapy Counseling", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "DACAC", cost: "Ksh 17,500/=" },
-    { title: "Guidance and Counseling", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "DACAC", cost: "Ksh 17,500/=" },
-    { title: "Disaster Management and Trauma", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "DACAC", cost: "Ksh 17,500/=" },
-    { title: "Teacher–Children Ministry", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "DACAC", cost: "Ksh 17,500/=" },
+    { title: "Family and Marriage Counseling", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Psychology Therapy Counseling", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Guidance and Counseling", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Disaster Management and Trauma", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Teacher–Children Ministry", entry: "KCSE D+", duration: "6 Months", semesters: "1", examBody: "CDACC", cost: "Ksh 17,500/=" },
   ];
 
   const computerBasedCounseling = [
-    { title: "Drug Abuse & Substance Counseling (Certificate)", entry: "KCSE D", duration: "6 Months", semesters: "1", examBody: "DACAC", cost: "Ksh 17,500/=" },
-    { title: "Drug Abuse & Substance Counseling (Diploma)", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "DACAC", cost: "Ksh 27,500/=" },
+    { title: "Drug Abuse & Substance Counseling (Certificate)", entry: "KCSE D", duration: "6 Months", semesters: "1", examBody: "CDACC", cost: "Ksh 17,500/=" },
+    { title: "Drug Abuse & Substance Counseling (Diploma)", entry: "KCSE C", duration: "2 Years", semesters: "4", examBody: "CDACC", cost: "Ksh 27,500/=" },
   ];
 
   const shortCourses = [
@@ -82,7 +82,7 @@ const Programs = () => {
                 <GraduationCap className="w-8 h-8 text-pink-400 mr-3" />
                 <div>
                   <CardTitle className="text-2xl text-blue-700">Diploma Programs</CardTitle>
-                  <CardDescription className="text-blue-600">2-year comprehensive programs (4 semesters) with D+ & DACAC certification</CardDescription>
+                  <CardDescription className="text-blue-600">2-year comprehensive programs (4 semesters) with CDACC certification</CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -121,7 +121,7 @@ const Programs = () => {
                 <Award className="w-8 h-8 text-blue-600 mr-3" />
                 <div>
                   <CardTitle className="text-2xl text-blue-700">Certificate Programs</CardTitle>
-                  <CardDescription className="text-blue-600">6-month focused programs with DACAC certification</CardDescription>
+                  <CardDescription className="text-blue-600">6-month focused programs with CDACC certification</CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -160,7 +160,7 @@ const Programs = () => {
                 <Computer className="w-8 h-8 text-pink-400 mr-3" />
                 <div>
                   <CardTitle className="text-2xl text-blue-700">Computer-Based Counseling Courses</CardTitle>
-                  <CardDescription className="text-blue-600">Specialized counseling programs with DACAC certification</CardDescription>
+                  <CardDescription className="text-blue-600">Specialized counseling programs with CDACC certification</CardDescription>
                 </div>
               </div>
             </CardHeader>
