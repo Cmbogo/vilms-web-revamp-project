@@ -1,11 +1,81 @@
 
+import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Phone, Mail, MapPin, Clock, User } from "lucide-react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "General Inquiry",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            email: formData.email,
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for contacting VILMS. We'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "General Inquiry",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again later or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -72,7 +142,7 @@ const Contact = () => {
                       <Mail className="w-5 h-5 text-blue-600 mr-3" />
                       <div>
                         <p className="text-blue-700 font-semibold">Email</p>
-                        <a href="mailto:info@vilms.ac.ke" className="text-blue-600 hover:text-pink-400">info@vilms.ac.ke</a>
+                        <a href="mailto:admin@vilms.ac.ke" className="text-blue-600 hover:text-pink-400">admin@vilms.ac.ke</a>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -104,22 +174,30 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-6">
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-blue-700 font-medium mb-2">First Name</label>
                       <input 
                         type="text" 
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
                         className="w-full px-4 py-2 border border-blue-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
                         placeholder="Your first name"
+                        required
                       />
                     </div>
                     <div>
                       <label className="block text-blue-700 font-medium mb-2">Last Name</label>
                       <input 
                         type="text" 
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
                         className="w-full px-4 py-2 border border-blue-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
                         placeholder="Your last name"
+                        required
                       />
                     </div>
                   </div>
@@ -128,8 +206,12 @@ const Contact = () => {
                     <label className="block text-blue-700 font-medium mb-2">Email</label>
                     <input 
                       type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-blue-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
                       placeholder="your.email@example.com"
+                      required
                     />
                   </div>
                   
@@ -137,6 +219,9 @@ const Contact = () => {
                     <label className="block text-blue-700 font-medium mb-2">Phone Number</label>
                     <input 
                       type="tel" 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-blue-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
                       placeholder="+254 xxx xxx xxx"
                     />
@@ -144,7 +229,12 @@ const Contact = () => {
                   
                   <div>
                     <label className="block text-blue-700 font-medium mb-2">Subject</label>
-                    <select className="w-full px-4 py-2 border border-blue-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400">
+                    <select 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 border border-blue-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
+                    >
                       <option>General Inquiry</option>
                       <option>Program Information</option>
                       <option>Admissions</option>
@@ -157,13 +247,21 @@ const Contact = () => {
                     <label className="block text-blue-700 font-medium mb-2">Message</label>
                     <textarea 
                       rows={4}
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-blue-200 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
                       placeholder="Tell us how we can help you..."
+                      required
                     ></textarea>
                   </div>
                   
-                  <Button className="w-full bg-pink-400 hover:bg-pink-500 text-white py-3">
-                    Send Message
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-pink-400 hover:bg-pink-500 text-white py-3"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
@@ -185,7 +283,14 @@ const Contact = () => {
                   <h4 className="text-blue-700 font-semibold mb-2">VILMS Campus</h4>
                   <p className="text-blue-600">Kamiti Road Behind Deliverance Church</p>
                   <p className="text-blue-600">Zimmerman, Nairobi</p>
-                  <p className="text-sm text-blue-500 mt-2">Interactive map integration coming soon</p>
+                  <a 
+                    href="https://tinyurl.com/yc2nvzzs" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block mt-3 text-pink-400 hover:text-pink-500 underline"
+                  >
+                    View on Map
+                  </a>
                 </div>
               </div>
             </CardContent>

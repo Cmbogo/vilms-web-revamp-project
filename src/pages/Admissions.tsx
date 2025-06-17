@@ -120,27 +120,43 @@ const Admissions = () => {
               </div>
             </CardHeader>
             <CardContent className="pt-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 <div className="bg-pink-50 p-4 rounded-lg">
                   <h4 className="text-blue-700 font-semibold mb-2">Diploma Programs</h4>
-                  <p className="text-pink-600 text-lg font-bold">KSH 27,500 - 30,000</p>
-                  <p className="text-blue-600 text-sm">Per year (2 years total)</p>
+                  <p className="text-pink-600 text-lg font-bold">KSH 17,500/= - 30,000/=</p>
+                  <p className="text-blue-600 text-sm">Per semester (4 semesters total)</p>
+                  <p className="text-blue-600 text-xs mt-1">Counseling: KSH 17,500/= | Business/ICT/Social: KSH 30,000/= | Theology: KSH 27,000/=</p>
                 </div>
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <h4 className="text-blue-700 font-semibold mb-2">Certificate Programs</h4>
-                  <p className="text-pink-600 text-lg font-bold">KSH 17,500</p>
-                  <p className="text-blue-600 text-sm">Total program fee (1 year)</p>
+                  <p className="text-pink-600 text-lg font-bold">KSH 17,500/=</p>
+                  <p className="text-blue-600 text-sm">Total program fee (6 months)</p>
                 </div>
                 <div className="bg-pink-50 p-4 rounded-lg">
-                  <h4 className="text-blue-700 font-semibold mb-2">Short Courses</h4>
-                  <p className="text-pink-600 text-lg font-bold">KSH 5,000 - 25,000</p>
-                  <p className="text-blue-600 text-sm">Varies by course duration</p>
-                </div>
-                <div className="bg-blue-50 p-4 rounded-lg">
                   <h4 className="text-blue-700 font-semibold mb-2">Computer Packages</h4>
-                  <p className="text-pink-600 text-lg font-bold">KSH 10,000</p>
+                  <p className="text-pink-600 text-lg font-bold">KSH 10,000/=</p>
                   <p className="text-blue-600 text-sm">10 packages included</p>
                 </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="text-blue-700 font-semibold mb-2">Short Courses</h4>
+                  <p className="text-pink-600 text-lg font-bold">KSH 5,000/= - 25,000/=</p>
+                  <p className="text-blue-600 text-sm">Duration: 2 days to 1 month</p>
+                  <p className="text-blue-600 text-xs mt-1">Most courses: KSH 10,000/= | Management/Mediation: KSH 25,000/=</p>
+                </div>
+                <div className="bg-pink-50 p-4 rounded-lg">
+                  <h4 className="text-blue-700 font-semibold mb-2">Computer-Based Counseling</h4>
+                  <p className="text-pink-600 text-lg font-bold">KSH 17,500/= - 27,500/=</p>
+                  <p className="text-blue-600 text-sm">Certificate: KSH 17,500/= | Diploma: KSH 27,500/= per semester</p>
+                </div>
+              </div>
+
+              <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                <h4 className="text-blue-700 font-semibold mb-2">Additional Fees</h4>
+                <p className="text-blue-600"><strong>VILMS Exam Fee:</strong> KSH 4,500/=</p>
+                <p className="text-blue-600 text-sm mt-1">Organizational/Institutional training fees are negotiable based on requirements.</p>
               </div>
             </CardContent>
           </Card>
