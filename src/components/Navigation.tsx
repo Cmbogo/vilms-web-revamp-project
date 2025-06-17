@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,7 +22,7 @@ export const Navigation = () => {
               />
               <div>
                 <h1 className="text-2xl font-bold text-blue-600">VILMS</h1>
-                <p className="text-xs text-blue-500">Excellence in Education</p>
+                <p className="text-xs text-blue-500">Knowledge That Sets Africa Free</p>
               </div>
             </Link>
           </div>
@@ -74,7 +73,7 @@ export const Navigation = () => {
           </div>
           
           <div className="hidden md:block">
-            <Link to="/admissions">
+            <Link to="/contact">
               <Button className="bg-pink-400 hover:bg-pink-500 text-white">
                 Apply Now
               </Button>
@@ -142,7 +141,7 @@ export const Navigation = () => {
             >
               Contact
             </Link>
-            <Link to="/admissions" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
               <Button className="bg-pink-400 hover:bg-pink-500 text-white w-full mt-2">
                 Apply Now
               </Button>

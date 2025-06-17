@@ -1,4 +1,3 @@
-
 import { Mail, Map, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -52,8 +51,8 @@ export const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-pink-300" />
-                <a href="mailto:info@vilms.ac.ke" className="text-sm hover:text-pink-300 transition-colors">
-                  info@vilms.ac.ke
+                <a href="mailto:admin@vilms.ac.ke" className="text-sm hover:text-pink-300 transition-colors">
+                  admin@vilms.ac.ke
                 </a>
               </div>
               <div className="flex items-center">
@@ -67,7 +66,7 @@ export const Footer = () => {
         <div className="border-t border-blue-600 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-blue-200 text-sm">
-              © 2024 Vision Institute of Leadership and Management Studies. All rights reserved.
+              © 2025 Vision Institute of Leadership and Management Studies. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-blue-200 hover:text-pink-300 transition-colors text-sm">
